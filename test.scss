@@ -1,0 +1,112 @@
+//Declaring variables in sass
+
+$bluecolor : blue;
+$yellowcolor : yellow;
+
+//how to use the declared variables
+
+body{
+	background : $bluecolor;
+}
+
+
+//Inheritance in scss.We can inherit the styles using extend keyword
+
+.testclass1{
+	margin-top : 20px;
+	color : blue;
+}
+
+.testclass2{
+	@extend .testclass1;
+	margin-bottom : 5px;
+}
+
+//when above lines of code are compiled it looks something like below
+
+/* 	.testclass1,.testclass2{
+		margin-top:20px;
+		color : blue;
+}
+	.testclass2{
+		margin-bottom : 5px;
+	}
+
+*/
+
+
+//if else in sass
+
+$weather : cold;
+
+@if $weather == cold {
+		
+}@else if $weather == hot{
+
+}@else{
+
+}
+
+
+//Declaring an array in scss
+
+$colorarr : ('blue','greeen','yellow','red','black','white');
+
+//looping through an array in scss
+
+@each $color in colorarr{
+
+}
+
+//Nesting in scss
+
+div {
+	p {
+    		color : blue;
+	}
+	span{
+		color : yellow;
+	}
+}
+
+
+/*when above lines of code are compiled it looks something like this
+	div {
+		p{
+			color : blue;
+		}
+	}
+
+	div {
+		span{
+			color : yellow;
+		}
+	}	
+*/
+
+
+//We can even import other scss files
+
+/*Content of file1
+	body {
+		background : yellow;
+	}
+
+*/
+
+/*Content of file2
+	import file1;
+	p{
+		background : red;
+	}
+*/
+
+/*
+	When the above lines of code are executed 
+
+	import in scss doesnot make any extra http request.It simply replaces the import with the content of the file
+
+*/
+
+
+
