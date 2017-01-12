@@ -109,4 +109,15 @@ div {
 */
 
 
+//for loop 
 
+@for $i from 1 through 10
+	//do something
+
+
+//while loop
+
+$whilevar : 5;
+@while $whilevar > 0
+	//do something
+	$whilevar : $whilevar - 1;
